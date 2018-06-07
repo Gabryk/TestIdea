@@ -49,16 +49,9 @@ Host demo on GitHub Pages:
 
 ## What about CSS?
 
-### Inline styles
+### Add Pure to Your Page
+[Pure.io](https://purecss.io/start/)
 
-The easiest option is to use the style attribute. Like this for example:
+You can add Pure to your page via the free unpkg CDN. Just add the following `<link>` element into your page's `<head>`, before your project's stylesheets.. Like this for example:
 
-`<button style={{background: "blue", width: 20 }} >test</button>`
-
-This is a clean approach since the user of your package doesn't have to separately import a css file. The downside is that you can't use a bunch of css features: pseudo-selectors like `:focus` and `:hover`, media-queries and some prefixed css-properties, which can be a deal breaker.
-
-### Separate CSS file
-
-Your other option is to create a css file inside the `src/lib` folder. It will be automatically copied to the generated `lib` folder. Then you have to ask your users to import it into their app with something like `import "../node_modules/[NAME_OF_YOUR_LIBRARY]/lib/styles.css";` or to manually copy it. Your css class names might be global for the developers entire app so make the class names are unique.
-
-Keep in mind that it is a bad idea to import the css directly into your component file. This requires the webpack style-loader to work, so any user of your package that does not use this loader will be screwed.
+`<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">`
